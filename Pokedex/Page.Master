@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.Master.cs" Inherits="Pokedex.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.Master.cs" Inherits="Pokedex.Page" %>
 
 <!DOCTYPE html>
 
@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Pokédex</title>
+    <link rel="apple-touch-icon" href="assets/images/favicon.ico">
+    <link rel="icon" href="assets/images/favicon.ico">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

@@ -40,33 +40,6 @@ namespace Pokedex {
         protected global::System.Web.UI.WebControls.Literal LtlName;
         
         /// <summary>
-        /// LtlSpecies control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtlSpecies;
-        
-        /// <summary>
-        /// LtlMoves control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtlMoves;
-        
-        /// <summary>
-        /// LtlTypes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtlTypes;
-        
-        /// <summary>
         /// LtlMass control.
         /// </summary>
         /// <remarks>
@@ -83,6 +56,33 @@ namespace Pokedex {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal LtlHeight;
+        
+        /// <summary>
+        /// LtlSpecies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LtlSpecies;
+        
+        /// <summary>
+        /// LtlTypes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LtlTypes;
+        
+        /// <summary>
+        /// LtlMoves control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LtlMoves;
         
         /// <summary>
         /// LtlAbility control.

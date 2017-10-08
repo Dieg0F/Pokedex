@@ -846,7 +846,7 @@
     <Content Include="assets\images\official-artwork\97.png" />
     <Content Include="assets\images\official-artwork\98.png" />
     <Content Include="assets\images\official-artwork\99.png" />
-    <Content Include="assets\images\pokeball_icon.png" />
+    <Content Include="assets\images\favicon.ico" />
     <Content Include="assets\images\pokedex.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

@@ -49,7 +49,11 @@ p {
 }
 
 .alert_top {
-    min-height: 60vh!important;
+    min-height: 60vh !important;
+}
+
+.list_pokemons {
+    margin-top: 65px;
 }
 
 /** Sections **/
@@ -65,13 +69,13 @@ p {
 /** Head **/
 
 .navbar-brand {
-    color: #fff!important;
+    color: #fff !important;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
 }
 
 .navbar-toggler-icon {
-    color: #fff!important;
+    color: #fff !important;
 }
 
 .content_section_head .navbar {
@@ -79,7 +83,7 @@ p {
 }
 
 .content_section_head .navbar-nav > li > a {
-    color: rgba(255,255,255,0.7)!important;
+    color: rgba(255,255,255,0.7) !important;
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-size: 15px;
@@ -108,10 +112,11 @@ p {
     border-radius: 2px;
 }
 
-.box_effect:hover > .content_type_select {
+.box_effect:hover > .content_type_select, .list_pokemons a:hover .content_item {
     z-index: 2;
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.12), 0px 8px 8px 0px rgba(0,0,0,0.24);
     transition: box-shadow 0.2s ease;
+    text-decoration: none !important;
 }
 
     .box_effect:hover > .content_type_select p, .box_effect:hover {
@@ -136,23 +141,33 @@ p {
     text-align: center;
     padding: 20px 15px;
     text-transform: uppercase;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    outline: none;
+    transition: box-shadow 200ms cubic-bezier(0.4,0.0,0.2,1);
+    border-radius: 2px;
+    margin: 15px 0;
 }
 
-    .content_item a {
-        color: #BDBDBD;
-        transition: color 0.2s ease;
+    .content_item img {
+        width: 100%;
+        margin: 15px 0;
     }
-
-        .content_item a:hover {
-            color: #424242;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
 
     .content_item span {
         font-family: 'Roboto', sans-serif;
-        font-size: 23px;
+        font-size: 18px;
         font-weight: 300;
+    }
+
+.list_pokemons a {
+    color: #BDBDBD;
+    transition: color 0.2s ease;
+}
+
+    .list_pokemons a:hover {
+        color: #424242;
+        text-decoration: none;
+        transition: color 0.2s ease;
     }
 
 .content_btn_grup {
@@ -196,24 +211,29 @@ p {
     border-radius: 2px;
 }
 
-    .content_item_detail > img {
+    .content_item_detail img {
         max-width: 100%;
         display: block;
         margin: 15px auto;
     }
 
-    .content_item_detail > p {
-        color: #757575 !important;
+    .content_item_detail p {
+        color: #999 !important;
         font-family: 'Roboto', sans-serif !important;
         text-transform: capitalize !important;
+        font-size: 23px;
+        line-height: 32px;
     }
 
-        .content_item_detail > p > span {
+        .content_item_detail p > span {
             color: #424242;
             font-family: 'Roboto', sans-serif;
             display: inline-block;
-            text-transform: uppercase;
         }
+
+.content_description.name {
+    padding-top: 15px;
+}
 
 @media (max-width: 768px) {
     .content_section_head {
@@ -222,6 +242,10 @@ p {
 
     .content_item_detail {
         padding: 25px 35px;
+    }
+
+    .content_center {
+        margin: 35px auto;
     }
 }
 

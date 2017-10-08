@@ -11,11 +11,17 @@ namespace Pokedex
 {
     public partial class Details : System.Web.UI.Page
     {
+        /// <summary>
+        /// Page Load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Name of pokemon of url
             string name = Request.QueryString["name"];
 
+            //If name if retuns to default page
             if (name == null || name == "")
             {
                 Response.Redirect("default.aspx");
@@ -25,6 +31,10 @@ namespace Pokedex
 
         }
 
+        /// <summary>
+        /// Compose the pokemon specs
+        /// </summary>
+        /// <param name="name">Pokemon's name used to search on API</param>
         public async void getPokemon(string name)
         {
             try
@@ -46,6 +56,10 @@ namespace Pokedex
             }
         }
 
+        /// <summary>
+        /// Functions to read the pokemons specs
+        /// </summary>
+        /// <param name="p">Pokemon Object</param>
         public void Image(Pokemon p)
         {
             ImagePokemon.ImageUrl = "assets/images/official-artwork/" + p.ID + ".png";

@@ -10,7 +10,7 @@
 namespace Pokedex {
     
     
-    public partial class Site1 {
+    public partial class Page {
         
         /// <summary>
         /// head control.
