@@ -1,0 +1,959 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E72AE963-A622-4A7F-A252-D27248EF348E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pokedex</RootNamespace>
+    <AssemblyName>Pokedex</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PokeApi.NET, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PokeApi.NET.1.1.0\lib\net45\PokeApi.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Page.Master" />
+    <Content Include="scripts\jquery-1.9.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\bag_icon.png" />
+    <Content Include="assets\images\official-artwork\1.png" />
+    <Content Include="assets\images\official-artwork\10.png" />
+    <Content Include="assets\images\official-artwork\100.png" />
+    <Content Include="assets\images\official-artwork\101.png" />
+    <Content Include="assets\images\official-artwork\102.png" />
+    <Content Include="assets\images\official-artwork\103.png" />
+    <Content Include="assets\images\official-artwork\104.png" />
+    <Content Include="assets\images\official-artwork\105.png" />
+    <Content Include="assets\images\official-artwork\106.png" />
+    <Content Include="assets\images\official-artwork\107.png" />
+    <Content Include="assets\images\official-artwork\108.png" />
+    <Content Include="assets\images\official-artwork\109.png" />
+    <Content Include="assets\images\official-artwork\11.png" />
+    <Content Include="assets\images\official-artwork\110.png" />
+    <Content Include="assets\images\official-artwork\111.png" />
+    <Content Include="assets\images\official-artwork\112.png" />
+    <Content Include="assets\images\official-artwork\113.png" />
+    <Content Include="assets\images\official-artwork\114.png" />
+    <Content Include="assets\images\official-artwork\115.png" />
+    <Content Include="assets\images\official-artwork\116.png" />
+    <Content Include="assets\images\official-artwork\117.png" />
+    <Content Include="assets\images\official-artwork\118.png" />
+    <Content Include="assets\images\official-artwork\119.png" />
+    <Content Include="assets\images\official-artwork\12.png" />
+    <Content Include="assets\images\official-artwork\120.png" />
+    <Content Include="assets\images\official-artwork\121.png" />
+    <Content Include="assets\images\official-artwork\122.png" />
+    <Content Include="assets\images\official-artwork\123.png" />
+    <Content Include="assets\images\official-artwork\124.png" />
+    <Content Include="assets\images\official-artwork\125.png" />
+    <Content Include="assets\images\official-artwork\126.png" />
+    <Content Include="assets\images\official-artwork\127.png" />
+    <Content Include="assets\images\official-artwork\128.png" />
+    <Content Include="assets\images\official-artwork\129.png" />
+    <Content Include="assets\images\official-artwork\13.png" />
+    <Content Include="assets\images\official-artwork\130.png" />
+    <Content Include="assets\images\official-artwork\131.png" />
+    <Content Include="assets\images\official-artwork\132.png" />
+    <Content Include="assets\images\official-artwork\133.png" />
+    <Content Include="assets\images\official-artwork\134.png" />
+    <Content Include="assets\images\official-artwork\135.png" />
+    <Content Include="assets\images\official-artwork\136.png" />
+    <Content Include="assets\images\official-artwork\137.png" />
+    <Content Include="assets\images\official-artwork\138.png" />
+    <Content Include="assets\images\official-artwork\139.png" />
+    <Content Include="assets\images\official-artwork\14.png" />
+    <Content Include="assets\images\official-artwork\140.png" />
+    <Content Include="assets\images\official-artwork\141.png" />
+    <Content Include="assets\images\official-artwork\142.png" />
+    <Content Include="assets\images\official-artwork\143.png" />
+    <Content Include="assets\images\official-artwork\144.png" />
+    <Content Include="assets\images\official-artwork\145.png" />
+    <Content Include="assets\images\official-artwork\146.png" />
+    <Content Include="assets\images\official-artwork\147.png" />
+    <Content Include="assets\images\official-artwork\148.png" />
+    <Content Include="assets\images\official-artwork\149.png" />
+    <Content Include="assets\images\official-artwork\15.png" />
+    <Content Include="assets\images\official-artwork\150.png" />
+    <Content Include="assets\images\official-artwork\151.png" />
+    <Content Include="assets\images\official-artwork\152.png" />
+    <Content Include="assets\images\official-artwork\153.png" />
+    <Content Include="assets\images\official-artwork\154.png" />
+    <Content Include="assets\images\official-artwork\155.png" />
+    <Content Include="assets\images\official-artwork\156.png" />
+    <Content Include="assets\images\official-artwork\157.png" />
+    <Content Include="assets\images\official-artwork\158.png" />
+    <Content Include="assets\images\official-artwork\159.png" />
+    <Content Include="assets\images\official-artwork\16.png" />
+    <Content Include="assets\images\official-artwork\160.png" />
+    <Content Include="assets\images\official-artwork\161.png" />
+    <Content Include="assets\images\official-artwork\162.png" />
+    <Content Include="assets\images\official-artwork\163.png" />
+    <Content Include="assets\images\official-artwork\164.png" />
+    <Content Include="assets\images\official-artwork\165.png" />
+    <Content Include="assets\images\official-artwork\166.png" />
+    <Content Include="assets\images\official-artwork\167.png" />
+    <Content Include="assets\images\official-artwork\168.png" />
+    <Content Include="assets\images\official-artwork\169.png" />
+    <Content Include="assets\images\official-artwork\17.png" />
+    <Content Include="assets\images\official-artwork\170.png" />
+    <Content Include="assets\images\official-artwork\171.png" />
+    <Content Include="assets\images\official-artwork\172.png" />
+    <Content Include="assets\images\official-artwork\173.png" />
+    <Content Include="assets\images\official-artwork\174.png" />
+    <Content Include="assets\images\official-artwork\175.png" />
+    <Content Include="assets\images\official-artwork\176.png" />
+    <Content Include="assets\images\official-artwork\177.png" />
+    <Content Include="assets\images\official-artwork\178.png" />
+    <Content Include="assets\images\official-artwork\179.png" />
+    <Content Include="assets\images\official-artwork\18.png" />
+    <Content Include="assets\images\official-artwork\180.png" />
+    <Content Include="assets\images\official-artwork\181.png" />
+    <Content Include="assets\images\official-artwork\182.png" />
+    <Content Include="assets\images\official-artwork\183.png" />
+    <Content Include="assets\images\official-artwork\184.png" />
+    <Content Include="assets\images\official-artwork\185.png" />
+    <Content Include="assets\images\official-artwork\186.png" />
+    <Content Include="assets\images\official-artwork\187.png" />
+    <Content Include="assets\images\official-artwork\188.png" />
+    <Content Include="assets\images\official-artwork\189.png" />
+    <Content Include="assets\images\official-artwork\19.png" />
+    <Content Include="assets\images\official-artwork\190.png" />
+    <Content Include="assets\images\official-artwork\191.png" />
+    <Content Include="assets\images\official-artwork\192.png" />
+    <Content Include="assets\images\official-artwork\193.png" />
+    <Content Include="assets\images\official-artwork\194.png" />
+    <Content Include="assets\images\official-artwork\195.png" />
+    <Content Include="assets\images\official-artwork\196.png" />
+    <Content Include="assets\images\official-artwork\197.png" />
+    <Content Include="assets\images\official-artwork\198.png" />
+    <Content Include="assets\images\official-artwork\199.png" />
+    <Content Include="assets\images\official-artwork\2.png" />
+    <Content Include="assets\images\official-artwork\20.png" />
+    <Content Include="assets\images\official-artwork\200.png" />
+    <Content Include="assets\images\official-artwork\201.png" />
+    <Content Include="assets\images\official-artwork\202.png" />
+    <Content Include="assets\images\official-artwork\203.png" />
+    <Content Include="assets\images\official-artwork\204.png" />
+    <Content Include="assets\images\official-artwork\205.png" />
+    <Content Include="assets\images\official-artwork\206.png" />
+    <Content Include="assets\images\official-artwork\207.png" />
+    <Content Include="assets\images\official-artwork\208.png" />
+    <Content Include="assets\images\official-artwork\209.png" />
+    <Content Include="assets\images\official-artwork\21.png" />
+    <Content Include="assets\images\official-artwork\210.png" />
+    <Content Include="assets\images\official-artwork\211.png" />
+    <Content Include="assets\images\official-artwork\212.png" />
+    <Content Include="assets\images\official-artwork\213.png" />
+    <Content Include="assets\images\official-artwork\214.png" />
+    <Content Include="assets\images\official-artwork\215.png" />
+    <Content Include="assets\images\official-artwork\216.png" />
+    <Content Include="assets\images\official-artwork\217.png" />
+    <Content Include="assets\images\official-artwork\218.png" />
+    <Content Include="assets\images\official-artwork\219.png" />
+    <Content Include="assets\images\official-artwork\22.png" />
+    <Content Include="assets\images\official-artwork\220.png" />
+    <Content Include="assets\images\official-artwork\221.png" />
+    <Content Include="assets\images\official-artwork\222.png" />
+    <Content Include="assets\images\official-artwork\223.png" />
+    <Content Include="assets\images\official-artwork\224.png" />
+    <Content Include="assets\images\official-artwork\225.png" />
+    <Content Include="assets\images\official-artwork\226.png" />
+    <Content Include="assets\images\official-artwork\227.png" />
+    <Content Include="assets\images\official-artwork\228.png" />
+    <Content Include="assets\images\official-artwork\229.png" />
+    <Content Include="assets\images\official-artwork\23.png" />
+    <Content Include="assets\images\official-artwork\230.png" />
+    <Content Include="assets\images\official-artwork\231.png" />
+    <Content Include="assets\images\official-artwork\232.png" />
+    <Content Include="assets\images\official-artwork\233.png" />
+    <Content Include="assets\images\official-artwork\234.png" />
+    <Content Include="assets\images\official-artwork\235.png" />
+    <Content Include="assets\images\official-artwork\236.png" />
+    <Content Include="assets\images\official-artwork\237.png" />
+    <Content Include="assets\images\official-artwork\238.png" />
+    <Content Include="assets\images\official-artwork\239.png" />
+    <Content Include="assets\images\official-artwork\24.png" />
+    <Content Include="assets\images\official-artwork\240.png" />
+    <Content Include="assets\images\official-artwork\241.png" />
+    <Content Include="assets\images\official-artwork\242.png" />
+    <Content Include="assets\images\official-artwork\243.png" />
+    <Content Include="assets\images\official-artwork\244.png" />
+    <Content Include="assets\images\official-artwork\245.png" />
+    <Content Include="assets\images\official-artwork\246.png" />
+    <Content Include="assets\images\official-artwork\247.png" />
+    <Content Include="assets\images\official-artwork\248.png" />
+    <Content Include="assets\images\official-artwork\249.png" />
+    <Content Include="assets\images\official-artwork\25.png" />
+    <Content Include="assets\images\official-artwork\250.png" />
+    <Content Include="assets\images\official-artwork\251.png" />
+    <Content Include="assets\images\official-artwork\252.png" />
+    <Content Include="assets\images\official-artwork\253.png" />
+    <Content Include="assets\images\official-artwork\254.png" />
+    <Content Include="assets\images\official-artwork\255.png" />
+    <Content Include="assets\images\official-artwork\256.png" />
+    <Content Include="assets\images\official-artwork\257.png" />
+    <Content Include="assets\images\official-artwork\258.png" />
+    <Content Include="assets\images\official-artwork\259.png" />
+    <Content Include="assets\images\official-artwork\26.png" />
+    <Content Include="assets\images\official-artwork\260.png" />
+    <Content Include="assets\images\official-artwork\261.png" />
+    <Content Include="assets\images\official-artwork\262.png" />
+    <Content Include="assets\images\official-artwork\263.png" />
+    <Content Include="assets\images\official-artwork\264.png" />
+    <Content Include="assets\images\official-artwork\265.png" />
+    <Content Include="assets\images\official-artwork\266.png" />
+    <Content Include="assets\images\official-artwork\267.png" />
+    <Content Include="assets\images\official-artwork\268.png" />
+    <Content Include="assets\images\official-artwork\269.png" />
+    <Content Include="assets\images\official-artwork\27.png" />
+    <Content Include="assets\images\official-artwork\270.png" />
+    <Content Include="assets\images\official-artwork\271.png" />
+    <Content Include="assets\images\official-artwork\272.png" />
+    <Content Include="assets\images\official-artwork\273.png" />
+    <Content Include="assets\images\official-artwork\274.png" />
+    <Content Include="assets\images\official-artwork\275.png" />
+    <Content Include="assets\images\official-artwork\276.png" />
+    <Content Include="assets\images\official-artwork\277.png" />
+    <Content Include="assets\images\official-artwork\278.png" />
+    <Content Include="assets\images\official-artwork\279.png" />
+    <Content Include="assets\images\official-artwork\28.png" />
+    <Content Include="assets\images\official-artwork\280.png" />
+    <Content Include="assets\images\official-artwork\281.png" />
+    <Content Include="assets\images\official-artwork\282.png" />
+    <Content Include="assets\images\official-artwork\283.png" />
+    <Content Include="assets\images\official-artwork\284.png" />
+    <Content Include="assets\images\official-artwork\285.png" />
+    <Content Include="assets\images\official-artwork\286.png" />
+    <Content Include="assets\images\official-artwork\287.png" />
+    <Content Include="assets\images\official-artwork\288.png" />
+    <Content Include="assets\images\official-artwork\289.png" />
+    <Content Include="assets\images\official-artwork\29.png" />
+    <Content Include="assets\images\official-artwork\290.png" />
+    <Content Include="assets\images\official-artwork\291.png" />
+    <Content Include="assets\images\official-artwork\292.png" />
+    <Content Include="assets\images\official-artwork\293.png" />
+    <Content Include="assets\images\official-artwork\294.png" />
+    <Content Include="assets\images\official-artwork\295.png" />
+    <Content Include="assets\images\official-artwork\296.png" />
+    <Content Include="assets\images\official-artwork\297.png" />
+    <Content Include="assets\images\official-artwork\298.png" />
+    <Content Include="assets\images\official-artwork\299.png" />
+    <Content Include="assets\images\official-artwork\3.png" />
+    <Content Include="assets\images\official-artwork\30.png" />
+    <Content Include="assets\images\official-artwork\300.png" />
+    <Content Include="assets\images\official-artwork\301.png" />
+    <Content Include="assets\images\official-artwork\302.png" />
+    <Content Include="assets\images\official-artwork\303.png" />
+    <Content Include="assets\images\official-artwork\304.png" />
+    <Content Include="assets\images\official-artwork\305.png" />
+    <Content Include="assets\images\official-artwork\306.png" />
+    <Content Include="assets\images\official-artwork\307.png" />
+    <Content Include="assets\images\official-artwork\308.png" />
+    <Content Include="assets\images\official-artwork\309.png" />
+    <Content Include="assets\images\official-artwork\31.png" />
+    <Content Include="assets\images\official-artwork\310.png" />
+    <Content Include="assets\images\official-artwork\311.png" />
+    <Content Include="assets\images\official-artwork\312.png" />
+    <Content Include="assets\images\official-artwork\313.png" />
+    <Content Include="assets\images\official-artwork\314.png" />
+    <Content Include="assets\images\official-artwork\315.png" />
+    <Content Include="assets\images\official-artwork\316.png" />
+    <Content Include="assets\images\official-artwork\317.png" />
+    <Content Include="assets\images\official-artwork\318.png" />
+    <Content Include="assets\images\official-artwork\319.png" />
+    <Content Include="assets\images\official-artwork\32.png" />
+    <Content Include="assets\images\official-artwork\320.png" />
+    <Content Include="assets\images\official-artwork\321.png" />
+    <Content Include="assets\images\official-artwork\322.png" />
+    <Content Include="assets\images\official-artwork\323.png" />
+    <Content Include="assets\images\official-artwork\324.png" />
+    <Content Include="assets\images\official-artwork\325.png" />
+    <Content Include="assets\images\official-artwork\326.png" />
+    <Content Include="assets\images\official-artwork\327.png" />
+    <Content Include="assets\images\official-artwork\328.png" />
+    <Content Include="assets\images\official-artwork\329.png" />
+    <Content Include="assets\images\official-artwork\33.png" />
+    <Content Include="assets\images\official-artwork\330.png" />
+    <Content Include="assets\images\official-artwork\331.png" />
+    <Content Include="assets\images\official-artwork\332.png" />
+    <Content Include="assets\images\official-artwork\333.png" />
+    <Content Include="assets\images\official-artwork\334.png" />
+    <Content Include="assets\images\official-artwork\335.png" />
+    <Content Include="assets\images\official-artwork\336.png" />
+    <Content Include="assets\images\official-artwork\337.png" />
+    <Content Include="assets\images\official-artwork\338.png" />
+    <Content Include="assets\images\official-artwork\339.png" />
+    <Content Include="assets\images\official-artwork\34.png" />
+    <Content Include="assets\images\official-artwork\340.png" />
+    <Content Include="assets\images\official-artwork\341.png" />
+    <Content Include="assets\images\official-artwork\342.png" />
+    <Content Include="assets\images\official-artwork\343.png" />
+    <Content Include="assets\images\official-artwork\344.png" />
+    <Content Include="assets\images\official-artwork\345.png" />
+    <Content Include="assets\images\official-artwork\346.png" />
+    <Content Include="assets\images\official-artwork\347.png" />
+    <Content Include="assets\images\official-artwork\348.png" />
+    <Content Include="assets\images\official-artwork\349.png" />
+    <Content Include="assets\images\official-artwork\35.png" />
+    <Content Include="assets\images\official-artwork\350.png" />
+    <Content Include="assets\images\official-artwork\351.png" />
+    <Content Include="assets\images\official-artwork\352.png" />
+    <Content Include="assets\images\official-artwork\353.png" />
+    <Content Include="assets\images\official-artwork\354.png" />
+    <Content Include="assets\images\official-artwork\355.png" />
+    <Content Include="assets\images\official-artwork\356.png" />
+    <Content Include="assets\images\official-artwork\357.png" />
+    <Content Include="assets\images\official-artwork\358.png" />
+    <Content Include="assets\images\official-artwork\359.png" />
+    <Content Include="assets\images\official-artwork\36.png" />
+    <Content Include="assets\images\official-artwork\360.png" />
+    <Content Include="assets\images\official-artwork\361.png" />
+    <Content Include="assets\images\official-artwork\362.png" />
+    <Content Include="assets\images\official-artwork\363.png" />
+    <Content Include="assets\images\official-artwork\364.png" />
+    <Content Include="assets\images\official-artwork\365.png" />
+    <Content Include="assets\images\official-artwork\366.png" />
+    <Content Include="assets\images\official-artwork\367.png" />
+    <Content Include="assets\images\official-artwork\368.png" />
+    <Content Include="assets\images\official-artwork\369.png" />
+    <Content Include="assets\images\official-artwork\37.png" />
+    <Content Include="assets\images\official-artwork\370.png" />
+    <Content Include="assets\images\official-artwork\371.png" />
+    <Content Include="assets\images\official-artwork\372.png" />
+    <Content Include="assets\images\official-artwork\373.png" />
+    <Content Include="assets\images\official-artwork\374.png" />
+    <Content Include="assets\images\official-artwork\375.png" />
+    <Content Include="assets\images\official-artwork\376.png" />
+    <Content Include="assets\images\official-artwork\377.png" />
+    <Content Include="assets\images\official-artwork\378.png" />
+    <Content Include="assets\images\official-artwork\379.png" />
+    <Content Include="assets\images\official-artwork\38.png" />
+    <Content Include="assets\images\official-artwork\380.png" />
+    <Content Include="assets\images\official-artwork\381.png" />
+    <Content Include="assets\images\official-artwork\382.png" />
+    <Content Include="assets\images\official-artwork\383.png" />
+    <Content Include="assets\images\official-artwork\384.png" />
+    <Content Include="assets\images\official-artwork\385.png" />
+    <Content Include="assets\images\official-artwork\386.png" />
+    <Content Include="assets\images\official-artwork\387.png" />
+    <Content Include="assets\images\official-artwork\388.png" />
+    <Content Include="assets\images\official-artwork\389.png" />
+    <Content Include="assets\images\official-artwork\39.png" />
+    <Content Include="assets\images\official-artwork\390.png" />
+    <Content Include="assets\images\official-artwork\391.png" />
+    <Content Include="assets\images\official-artwork\392.png" />
+    <Content Include="assets\images\official-artwork\393.png" />
+    <Content Include="assets\images\official-artwork\394.png" />
+    <Content Include="assets\images\official-artwork\395.png" />
+    <Content Include="assets\images\official-artwork\396.png" />
+    <Content Include="assets\images\official-artwork\397.png" />
+    <Content Include="assets\images\official-artwork\398.png" />
+    <Content Include="assets\images\official-artwork\399.png" />
+    <Content Include="assets\images\official-artwork\4.png" />
+    <Content Include="assets\images\official-artwork\40.png" />
+    <Content Include="assets\images\official-artwork\400.png" />
+    <Content Include="assets\images\official-artwork\401.png" />
+    <Content Include="assets\images\official-artwork\402.png" />
+    <Content Include="assets\images\official-artwork\403.png" />
+    <Content Include="assets\images\official-artwork\404.png" />
+    <Content Include="assets\images\official-artwork\405.png" />
+    <Content Include="assets\images\official-artwork\406.png" />
+    <Content Include="assets\images\official-artwork\407.png" />
+    <Content Include="assets\images\official-artwork\408.png" />
+    <Content Include="assets\images\official-artwork\409.png" />
+    <Content Include="assets\images\official-artwork\41.png" />
+    <Content Include="assets\images\official-artwork\410.png" />
+    <Content Include="assets\images\official-artwork\411.png" />
+    <Content Include="assets\images\official-artwork\412.png" />
+    <Content Include="assets\images\official-artwork\413.png" />
+    <Content Include="assets\images\official-artwork\414.png" />
+    <Content Include="assets\images\official-artwork\415.png" />
+    <Content Include="assets\images\official-artwork\416.png" />
+    <Content Include="assets\images\official-artwork\417.png" />
+    <Content Include="assets\images\official-artwork\418.png" />
+    <Content Include="assets\images\official-artwork\419.png" />
+    <Content Include="assets\images\official-artwork\42.png" />
+    <Content Include="assets\images\official-artwork\420.png" />
+    <Content Include="assets\images\official-artwork\421.png" />
+    <Content Include="assets\images\official-artwork\422.png" />
+    <Content Include="assets\images\official-artwork\423.png" />
+    <Content Include="assets\images\official-artwork\424.png" />
+    <Content Include="assets\images\official-artwork\425.png" />
+    <Content Include="assets\images\official-artwork\426.png" />
+    <Content Include="assets\images\official-artwork\427.png" />
+    <Content Include="assets\images\official-artwork\428.png" />
+    <Content Include="assets\images\official-artwork\429.png" />
+    <Content Include="assets\images\official-artwork\43.png" />
+    <Content Include="assets\images\official-artwork\430.png" />
+    <Content Include="assets\images\official-artwork\431.png" />
+    <Content Include="assets\images\official-artwork\432.png" />
+    <Content Include="assets\images\official-artwork\433.png" />
+    <Content Include="assets\images\official-artwork\434.png" />
+    <Content Include="assets\images\official-artwork\435.png" />
+    <Content Include="assets\images\official-artwork\436.png" />
+    <Content Include="assets\images\official-artwork\437.png" />
+    <Content Include="assets\images\official-artwork\438.png" />
+    <Content Include="assets\images\official-artwork\439.png" />
+    <Content Include="assets\images\official-artwork\44.png" />
+    <Content Include="assets\images\official-artwork\440.png" />
+    <Content Include="assets\images\official-artwork\441.png" />
+    <Content Include="assets\images\official-artwork\442.png" />
+    <Content Include="assets\images\official-artwork\443.png" />
+    <Content Include="assets\images\official-artwork\444.png" />
+    <Content Include="assets\images\official-artwork\445.png" />
+    <Content Include="assets\images\official-artwork\446.png" />
+    <Content Include="assets\images\official-artwork\447.png" />
+    <Content Include="assets\images\official-artwork\448.png" />
+    <Content Include="assets\images\official-artwork\449.png" />
+    <Content Include="assets\images\official-artwork\45.png" />
+    <Content Include="assets\images\official-artwork\450.png" />
+    <Content Include="assets\images\official-artwork\451.png" />
+    <Content Include="assets\images\official-artwork\452.png" />
+    <Content Include="assets\images\official-artwork\453.png" />
+    <Content Include="assets\images\official-artwork\454.png" />
+    <Content Include="assets\images\official-artwork\455.png" />
+    <Content Include="assets\images\official-artwork\456.png" />
+    <Content Include="assets\images\official-artwork\457.png" />
+    <Content Include="assets\images\official-artwork\458.png" />
+    <Content Include="assets\images\official-artwork\459.png" />
+    <Content Include="assets\images\official-artwork\46.png" />
+    <Content Include="assets\images\official-artwork\460.png" />
+    <Content Include="assets\images\official-artwork\461.png" />
+    <Content Include="assets\images\official-artwork\462.png" />
+    <Content Include="assets\images\official-artwork\463.png" />
+    <Content Include="assets\images\official-artwork\464.png" />
+    <Content Include="assets\images\official-artwork\465.png" />
+    <Content Include="assets\images\official-artwork\466.png" />
+    <Content Include="assets\images\official-artwork\467.png" />
+    <Content Include="assets\images\official-artwork\468.png" />
+    <Content Include="assets\images\official-artwork\469.png" />
+    <Content Include="assets\images\official-artwork\47.png" />
+    <Content Include="assets\images\official-artwork\470.png" />
+    <Content Include="assets\images\official-artwork\471.png" />
+    <Content Include="assets\images\official-artwork\472.png" />
+    <Content Include="assets\images\official-artwork\473.png" />
+    <Content Include="assets\images\official-artwork\474.png" />
+    <Content Include="assets\images\official-artwork\475.png" />
+    <Content Include="assets\images\official-artwork\476.png" />
+    <Content Include="assets\images\official-artwork\477.png" />
+    <Content Include="assets\images\official-artwork\478.png" />
+    <Content Include="assets\images\official-artwork\479.png" />
+    <Content Include="assets\images\official-artwork\48.png" />
+    <Content Include="assets\images\official-artwork\480.png" />
+    <Content Include="assets\images\official-artwork\481.png" />
+    <Content Include="assets\images\official-artwork\482.png" />
+    <Content Include="assets\images\official-artwork\483.png" />
+    <Content Include="assets\images\official-artwork\484.png" />
+    <Content Include="assets\images\official-artwork\485.png" />
+    <Content Include="assets\images\official-artwork\486.png" />
+    <Content Include="assets\images\official-artwork\487.png" />
+    <Content Include="assets\images\official-artwork\488.png" />
+    <Content Include="assets\images\official-artwork\489.png" />
+    <Content Include="assets\images\official-artwork\49.png" />
+    <Content Include="assets\images\official-artwork\490.png" />
+    <Content Include="assets\images\official-artwork\491.png" />
+    <Content Include="assets\images\official-artwork\492.png" />
+    <Content Include="assets\images\official-artwork\493.png" />
+    <Content Include="assets\images\official-artwork\494.png" />
+    <Content Include="assets\images\official-artwork\495.png" />
+    <Content Include="assets\images\official-artwork\496.png" />
+    <Content Include="assets\images\official-artwork\497.png" />
+    <Content Include="assets\images\official-artwork\498.png" />
+    <Content Include="assets\images\official-artwork\499.png" />
+    <Content Include="assets\images\official-artwork\5.png" />
+    <Content Include="assets\images\official-artwork\50.png" />
+    <Content Include="assets\images\official-artwork\500.png" />
+    <Content Include="assets\images\official-artwork\501.png" />
+    <Content Include="assets\images\official-artwork\502.png" />
+    <Content Include="assets\images\official-artwork\503.png" />
+    <Content Include="assets\images\official-artwork\504.png" />
+    <Content Include="assets\images\official-artwork\505.png" />
+    <Content Include="assets\images\official-artwork\506.png" />
+    <Content Include="assets\images\official-artwork\507.png" />
+    <Content Include="assets\images\official-artwork\508.png" />
+    <Content Include="assets\images\official-artwork\509.png" />
+    <Content Include="assets\images\official-artwork\51.png" />
+    <Content Include="assets\images\official-artwork\510.png" />
+    <Content Include="assets\images\official-artwork\511.png" />
+    <Content Include="assets\images\official-artwork\512.png" />
+    <Content Include="assets\images\official-artwork\513.png" />
+    <Content Include="assets\images\official-artwork\514.png" />
+    <Content Include="assets\images\official-artwork\515.png" />
+    <Content Include="assets\images\official-artwork\516.png" />
+    <Content Include="assets\images\official-artwork\517.png" />
+    <Content Include="assets\images\official-artwork\518.png" />
+    <Content Include="assets\images\official-artwork\519.png" />
+    <Content Include="assets\images\official-artwork\52.png" />
+    <Content Include="assets\images\official-artwork\520.png" />
+    <Content Include="assets\images\official-artwork\521.png" />
+    <Content Include="assets\images\official-artwork\522.png" />
+    <Content Include="assets\images\official-artwork\523.png" />
+    <Content Include="assets\images\official-artwork\524.png" />
+    <Content Include="assets\images\official-artwork\525.png" />
+    <Content Include="assets\images\official-artwork\526.png" />
+    <Content Include="assets\images\official-artwork\527.png" />
+    <Content Include="assets\images\official-artwork\528.png" />
+    <Content Include="assets\images\official-artwork\529.png" />
+    <Content Include="assets\images\official-artwork\53.png" />
+    <Content Include="assets\images\official-artwork\530.png" />
+    <Content Include="assets\images\official-artwork\531.png" />
+    <Content Include="assets\images\official-artwork\532.png" />
+    <Content Include="assets\images\official-artwork\533.png" />
+    <Content Include="assets\images\official-artwork\534.png" />
+    <Content Include="assets\images\official-artwork\535.png" />
+    <Content Include="assets\images\official-artwork\536.png" />
+    <Content Include="assets\images\official-artwork\537.png" />
+    <Content Include="assets\images\official-artwork\538.png" />
+    <Content Include="assets\images\official-artwork\539.png" />
+    <Content Include="assets\images\official-artwork\54.png" />
+    <Content Include="assets\images\official-artwork\540.png" />
+    <Content Include="assets\images\official-artwork\541.png" />
+    <Content Include="assets\images\official-artwork\542.png" />
+    <Content Include="assets\images\official-artwork\543.png" />
+    <Content Include="assets\images\official-artwork\544.png" />
+    <Content Include="assets\images\official-artwork\545.png" />
+    <Content Include="assets\images\official-artwork\546.png" />
+    <Content Include="assets\images\official-artwork\547.png" />
+    <Content Include="assets\images\official-artwork\548.png" />
+    <Content Include="assets\images\official-artwork\549.png" />
+    <Content Include="assets\images\official-artwork\55.png" />
+    <Content Include="assets\images\official-artwork\550.png" />
+    <Content Include="assets\images\official-artwork\551.png" />
+    <Content Include="assets\images\official-artwork\552.png" />
+    <Content Include="assets\images\official-artwork\553.png" />
+    <Content Include="assets\images\official-artwork\554.png" />
+    <Content Include="assets\images\official-artwork\555.png" />
+    <Content Include="assets\images\official-artwork\556.png" />
+    <Content Include="assets\images\official-artwork\557.png" />
+    <Content Include="assets\images\official-artwork\558.png" />
+    <Content Include="assets\images\official-artwork\559.png" />
+    <Content Include="assets\images\official-artwork\56.png" />
+    <Content Include="assets\images\official-artwork\560.png" />
+    <Content Include="assets\images\official-artwork\561.png" />
+    <Content Include="assets\images\official-artwork\562.png" />
+    <Content Include="assets\images\official-artwork\563.png" />
+    <Content Include="assets\images\official-artwork\564.png" />
+    <Content Include="assets\images\official-artwork\565.png" />
+    <Content Include="assets\images\official-artwork\566.png" />
+    <Content Include="assets\images\official-artwork\567.png" />
+    <Content Include="assets\images\official-artwork\568.png" />
+    <Content Include="assets\images\official-artwork\569.png" />
+    <Content Include="assets\images\official-artwork\57.png" />
+    <Content Include="assets\images\official-artwork\570.png" />
+    <Content Include="assets\images\official-artwork\571.png" />
+    <Content Include="assets\images\official-artwork\572.png" />
+    <Content Include="assets\images\official-artwork\573.png" />
+    <Content Include="assets\images\official-artwork\574.png" />
+    <Content Include="assets\images\official-artwork\575.png" />
+    <Content Include="assets\images\official-artwork\576.png" />
+    <Content Include="assets\images\official-artwork\577.png" />
+    <Content Include="assets\images\official-artwork\578.png" />
+    <Content Include="assets\images\official-artwork\579.png" />
+    <Content Include="assets\images\official-artwork\58.png" />
+    <Content Include="assets\images\official-artwork\580.png" />
+    <Content Include="assets\images\official-artwork\581.png" />
+    <Content Include="assets\images\official-artwork\582.png" />
+    <Content Include="assets\images\official-artwork\583.png" />
+    <Content Include="assets\images\official-artwork\584.png" />
+    <Content Include="assets\images\official-artwork\585.png" />
+    <Content Include="assets\images\official-artwork\586.png" />
+    <Content Include="assets\images\official-artwork\587.png" />
+    <Content Include="assets\images\official-artwork\588.png" />
+    <Content Include="assets\images\official-artwork\589.png" />
+    <Content Include="assets\images\official-artwork\59.png" />
+    <Content Include="assets\images\official-artwork\590.png" />
+    <Content Include="assets\images\official-artwork\591.png" />
+    <Content Include="assets\images\official-artwork\592.png" />
+    <Content Include="assets\images\official-artwork\593.png" />
+    <Content Include="assets\images\official-artwork\594.png" />
+    <Content Include="assets\images\official-artwork\595.png" />
+    <Content Include="assets\images\official-artwork\596.png" />
+    <Content Include="assets\images\official-artwork\597.png" />
+    <Content Include="assets\images\official-artwork\598.png" />
+    <Content Include="assets\images\official-artwork\599.png" />
+    <Content Include="assets\images\official-artwork\6.png" />
+    <Content Include="assets\images\official-artwork\60.png" />
+    <Content Include="assets\images\official-artwork\600.png" />
+    <Content Include="assets\images\official-artwork\601.png" />
+    <Content Include="assets\images\official-artwork\602.png" />
+    <Content Include="assets\images\official-artwork\603.png" />
+    <Content Include="assets\images\official-artwork\604.png" />
+    <Content Include="assets\images\official-artwork\605.png" />
+    <Content Include="assets\images\official-artwork\606.png" />
+    <Content Include="assets\images\official-artwork\607.png" />
+    <Content Include="assets\images\official-artwork\608.png" />
+    <Content Include="assets\images\official-artwork\609.png" />
+    <Content Include="assets\images\official-artwork\61.png" />
+    <Content Include="assets\images\official-artwork\610.png" />
+    <Content Include="assets\images\official-artwork\611.png" />
+    <Content Include="assets\images\official-artwork\612.png" />
+    <Content Include="assets\images\official-artwork\613.png" />
+    <Content Include="assets\images\official-artwork\614.png" />
+    <Content Include="assets\images\official-artwork\615.png" />
+    <Content Include="assets\images\official-artwork\616.png" />
+    <Content Include="assets\images\official-artwork\617.png" />
+    <Content Include="assets\images\official-artwork\618.png" />
+    <Content Include="assets\images\official-artwork\619.png" />
+    <Content Include="assets\images\official-artwork\62.png" />
+    <Content Include="assets\images\official-artwork\620.png" />
+    <Content Include="assets\images\official-artwork\621.png" />
+    <Content Include="assets\images\official-artwork\622.png" />
+    <Content Include="assets\images\official-artwork\623.png" />
+    <Content Include="assets\images\official-artwork\624.png" />
+    <Content Include="assets\images\official-artwork\625.png" />
+    <Content Include="assets\images\official-artwork\626.png" />
+    <Content Include="assets\images\official-artwork\627.png" />
+    <Content Include="assets\images\official-artwork\628.png" />
+    <Content Include="assets\images\official-artwork\629.png" />
+    <Content Include="assets\images\official-artwork\63.png" />
+    <Content Include="assets\images\official-artwork\630.png" />
+    <Content Include="assets\images\official-artwork\631.png" />
+    <Content Include="assets\images\official-artwork\632.png" />
+    <Content Include="assets\images\official-artwork\633.png" />
+    <Content Include="assets\images\official-artwork\634.png" />
+    <Content Include="assets\images\official-artwork\635.png" />
+    <Content Include="assets\images\official-artwork\636.png" />
+    <Content Include="assets\images\official-artwork\637.png" />
+    <Content Include="assets\images\official-artwork\638.png" />
+    <Content Include="assets\images\official-artwork\639.png" />
+    <Content Include="assets\images\official-artwork\64.png" />
+    <Content Include="assets\images\official-artwork\640.png" />
+    <Content Include="assets\images\official-artwork\641.png" />
+    <Content Include="assets\images\official-artwork\642.png" />
+    <Content Include="assets\images\official-artwork\643.png" />
+    <Content Include="assets\images\official-artwork\644.png" />
+    <Content Include="assets\images\official-artwork\645.png" />
+    <Content Include="assets\images\official-artwork\646.png" />
+    <Content Include="assets\images\official-artwork\647.png" />
+    <Content Include="assets\images\official-artwork\648.png" />
+    <Content Include="assets\images\official-artwork\649.png" />
+    <Content Include="assets\images\official-artwork\65.png" />
+    <Content Include="assets\images\official-artwork\650.png" />
+    <Content Include="assets\images\official-artwork\651.png" />
+    <Content Include="assets\images\official-artwork\652.png" />
+    <Content Include="assets\images\official-artwork\653.png" />
+    <Content Include="assets\images\official-artwork\654.png" />
+    <Content Include="assets\images\official-artwork\655.png" />
+    <Content Include="assets\images\official-artwork\656.png" />
+    <Content Include="assets\images\official-artwork\657.png" />
+    <Content Include="assets\images\official-artwork\658.png" />
+    <Content Include="assets\images\official-artwork\659.png" />
+    <Content Include="assets\images\official-artwork\66.png" />
+    <Content Include="assets\images\official-artwork\660.png" />
+    <Content Include="assets\images\official-artwork\661.png" />
+    <Content Include="assets\images\official-artwork\662.png" />
+    <Content Include="assets\images\official-artwork\663.png" />
+    <Content Include="assets\images\official-artwork\664.png" />
+    <Content Include="assets\images\official-artwork\665.png" />
+    <Content Include="assets\images\official-artwork\666.png" />
+    <Content Include="assets\images\official-artwork\667.png" />
+    <Content Include="assets\images\official-artwork\668.png" />
+    <Content Include="assets\images\official-artwork\669.png" />
+    <Content Include="assets\images\official-artwork\67.png" />
+    <Content Include="assets\images\official-artwork\670.png" />
+    <Content Include="assets\images\official-artwork\671.png" />
+    <Content Include="assets\images\official-artwork\672.png" />
+    <Content Include="assets\images\official-artwork\673.png" />
+    <Content Include="assets\images\official-artwork\674.png" />
+    <Content Include="assets\images\official-artwork\675.png" />
+    <Content Include="assets\images\official-artwork\676.png" />
+    <Content Include="assets\images\official-artwork\677.png" />
+    <Content Include="assets\images\official-artwork\678.png" />
+    <Content Include="assets\images\official-artwork\679.png" />
+    <Content Include="assets\images\official-artwork\68.png" />
+    <Content Include="assets\images\official-artwork\680.png" />
+    <Content Include="assets\images\official-artwork\681.png" />
+    <Content Include="assets\images\official-artwork\682.png" />
+    <Content Include="assets\images\official-artwork\683.png" />
+    <Content Include="assets\images\official-artwork\684.png" />
+    <Content Include="assets\images\official-artwork\685.png" />
+    <Content Include="assets\images\official-artwork\686.png" />
+    <Content Include="assets\images\official-artwork\687.png" />
+    <Content Include="assets\images\official-artwork\688.png" />
+    <Content Include="assets\images\official-artwork\689.png" />
+    <Content Include="assets\images\official-artwork\69.png" />
+    <Content Include="assets\images\official-artwork\690.png" />
+    <Content Include="assets\images\official-artwork\691.png" />
+    <Content Include="assets\images\official-artwork\692.png" />
+    <Content Include="assets\images\official-artwork\693.png" />
+    <Content Include="assets\images\official-artwork\694.png" />
+    <Content Include="assets\images\official-artwork\695.png" />
+    <Content Include="assets\images\official-artwork\696.png" />
+    <Content Include="assets\images\official-artwork\697.png" />
+    <Content Include="assets\images\official-artwork\698.png" />
+    <Content Include="assets\images\official-artwork\699.png" />
+    <Content Include="assets\images\official-artwork\7.png" />
+    <Content Include="assets\images\official-artwork\70.png" />
+    <Content Include="assets\images\official-artwork\700.png" />
+    <Content Include="assets\images\official-artwork\701.png" />
+    <Content Include="assets\images\official-artwork\702.png" />
+    <Content Include="assets\images\official-artwork\703.png" />
+    <Content Include="assets\images\official-artwork\704.png" />
+    <Content Include="assets\images\official-artwork\705.png" />
+    <Content Include="assets\images\official-artwork\706.png" />
+    <Content Include="assets\images\official-artwork\707.png" />
+    <Content Include="assets\images\official-artwork\708.png" />
+    <Content Include="assets\images\official-artwork\709.png" />
+    <Content Include="assets\images\official-artwork\71.png" />
+    <Content Include="assets\images\official-artwork\710.png" />
+    <Content Include="assets\images\official-artwork\711.png" />
+    <Content Include="assets\images\official-artwork\712.png" />
+    <Content Include="assets\images\official-artwork\713.png" />
+    <Content Include="assets\images\official-artwork\714.png" />
+    <Content Include="assets\images\official-artwork\715.png" />
+    <Content Include="assets\images\official-artwork\716.png" />
+    <Content Include="assets\images\official-artwork\717.png" />
+    <Content Include="assets\images\official-artwork\718.png" />
+    <Content Include="assets\images\official-artwork\719.png" />
+    <Content Include="assets\images\official-artwork\72.png" />
+    <Content Include="assets\images\official-artwork\720.png" />
+    <Content Include="assets\images\official-artwork\73.png" />
+    <Content Include="assets\images\official-artwork\74.png" />
+    <Content Include="assets\images\official-artwork\75.png" />
+    <Content Include="assets\images\official-artwork\76.png" />
+    <Content Include="assets\images\official-artwork\77.png" />
+    <Content Include="assets\images\official-artwork\78.png" />
+    <Content Include="assets\images\official-artwork\79.png" />
+    <Content Include="assets\images\official-artwork\8.png" />
+    <Content Include="assets\images\official-artwork\80.png" />
+    <Content Include="assets\images\official-artwork\81.png" />
+    <Content Include="assets\images\official-artwork\82.png" />
+    <Content Include="assets\images\official-artwork\83.png" />
+    <Content Include="assets\images\official-artwork\84.png" />
+    <Content Include="assets\images\official-artwork\85.png" />
+    <Content Include="assets\images\official-artwork\86.png" />
+    <Content Include="assets\images\official-artwork\87.png" />
+    <Content Include="assets\images\official-artwork\88.png" />
+    <Content Include="assets\images\official-artwork\89.png" />
+    <Content Include="assets\images\official-artwork\9.png" />
+    <Content Include="assets\images\official-artwork\90.png" />
+    <Content Include="assets\images\official-artwork\91.png" />
+    <Content Include="assets\images\official-artwork\92.png" />
+    <Content Include="assets\images\official-artwork\93.png" />
+    <Content Include="assets\images\official-artwork\94.png" />
+    <Content Include="assets\images\official-artwork\95.png" />
+    <Content Include="assets\images\official-artwork\96.png" />
+    <Content Include="assets\images\official-artwork\97.png" />
+    <Content Include="assets\images\official-artwork\98.png" />
+    <Content Include="assets\images\official-artwork\99.png" />
+    <Content Include="assets\images\pokeball_icon.png" />
+    <Content Include="assets\images\pokedex.png" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Details.aspx" />
+    <Content Include="Error.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Item.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\jquery-1.9.1.js" />
+    <Content Include="scripts\jquery-1.9.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Pokemons.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListPokemon.cs" />
+    <Compile Include="Item.aspx.cs">
+      <DependentUpon>Item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Item.aspx.designer.cs">
+      <DependentUpon>Item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Page.Master.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page.Master.designer.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons.aspx.cs">
+      <DependentUpon>Pokemons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pokemons.aspx.designer.cs">
+      <DependentUpon>Pokemons.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\js\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>17594</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17594/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
